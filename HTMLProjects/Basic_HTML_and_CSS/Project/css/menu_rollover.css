@@ -1,3 +1,4 @@
+
 body {
     background: #104352;
 }
@@ -43,7 +44,7 @@ body {
 background-color: #5eafdf;
 color: #fff;
 }
-.menuli:hover ul{
+.menu li:hover ul{
     display: block;
     opacity: 1;
     /*While not being hovered, drop down-menu hides. This also avoids a block-level bug*/
@@ -65,7 +66,7 @@ color: #fff;
     display: block;
     color: #b3b3b3;
 }
-.submenuli:hover{
+.submenu li:hover{
 color: #fff;
 background-color: #5eafdf;
 }
