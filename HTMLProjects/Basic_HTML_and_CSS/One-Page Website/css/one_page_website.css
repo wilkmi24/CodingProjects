@@ -1,0 +1,10 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+}
+.input{
+    width: auto;
+    margin: auto;
+    border:black;
+    border-radius: 2em;
+}
