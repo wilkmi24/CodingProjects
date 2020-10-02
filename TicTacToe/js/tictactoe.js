@@ -151,11 +151,11 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     //This line indicates where the start of a lines x axis is.
     let x1 = coordX1,
         //This line indicates where the start of a lines y axis is.
-        y1 = coordX1,
+        y1 = coordY1,
         // This line indicates where the end of a lines x axis is.
         x2 = coordX2,
         //This line indicates where the end of a lines x axis is.
-        y2 = coordX2, 
+        y2 = coordY2, 
         //This variable stores temporary x axis data we update in our animation loop.
         x = x1,
         //This variable stores temporary y axis data we update in our animation loop.
@@ -228,3 +228,5 @@ function resetGame() {
     //This resets our array so it is empty and we can start over.
     selectedSquares = [];
 }
+
+//submit on p 261
