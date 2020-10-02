@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- <title>Basic HTML Template</title>  -->
+
+	</head>
+	<body>
+    <p id="demo"></p>
+    
+    <script>
+       var hello;
+      
+      hello = () => {
+          return "Good Afternoon World!"
+      }
+    
+       document.getElementById("demo").innerHTML = hello()
+    </script>
+    
+    
+    <h2>some() Method</h2>
+    <p>checks if some array values pass a test.</p>
+    <p id="check"></p>
+    <script>
+        var numbers = [45, 4, 9, 16, 25];
+        var someOver18 = numbers.some(myFunction);
+
+        document.getElementById("check").innerHTML = "Some over 18 is " + someOver18;
+        
+        function myFunction(value, index, array) {
+            return value > 18;
+        }
+    </script>
+
+
+
+	</body>
+</html>
