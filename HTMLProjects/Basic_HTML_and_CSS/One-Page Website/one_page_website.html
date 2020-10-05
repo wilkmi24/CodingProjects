@@ -3,6 +3,7 @@
 	<head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./css/one_page_website.css">
+        <script src="./JS/one_page_website.js"></script>
 		<p>
 Here is my one page website
         </p>
@@ -20,9 +21,10 @@ Here is my one page website
         </div>
 <section>
 <!--Picture Tags-->
-        <div>
-<img src="/Users/mindywilkens/CodingProjects/HTMLProjects/Basic_HTML_JavaScript_1/img_girl.jpg" alt="Girl with hat">
-        </div>
+        <div id="myModal" class="modal">
+<img src="/Users/mindywilkens/CodingProjects/HTMLProjects/Basic_HTML_JavaScript_1/img_girl.jpg" alt="Girl with hat" onclick="openModal(); currentSlide(1)" class="hover-shadow cursor">
+        
+</div>
     </section>
 
 <!-- VIDEO SECTION iframe tag, src attribute etc. -->
