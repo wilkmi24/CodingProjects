@@ -7,7 +7,7 @@
 \pard\pardeftab720\sa321\partightenfactor0
 
 \f0\b\fs48 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 AJAX\
+AJAX\
 \pard\pardeftab720\sa240\partightenfactor0
 
 \f1\b0\fs24 \cf2 AJAX is not a programming language.\
