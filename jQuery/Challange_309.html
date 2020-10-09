@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- <title>Basic HTML Template</title>  -->
+
+	</head>
+	<body>
+<script src="./jquery-3.5.1.js"></script>
+
+<script>
+    $("document").ready(function() {
+        $("p").click(function() {
+            $(this).hide();
+        });
+    });
+</script>
+
+<p>If you click on me, I will disapperar.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+<script>
+    $(document).ready(function() {
+        $(".btn1").click(function() {
+            $("p").hide();
+        });
+        $(".btn2").click(function(){ 
+            $("p").show();
+        });
+    });
+</script>
+
+<p>This is a paragraph.</p>
+<button class="btn1">Hide</button>
+<button class="btn2">Show</button>
+
+
+</body>
+</html>

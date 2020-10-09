@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img src="./Images/hydrangea_jumbo-white-600x600_4.jpg" alt="flower" width="150" height="113">
+        <img src="./Images/img_mountains_wide.jpg" alt="Mountains" width="25%" height="25">
+        <img src="./Images/img_nature_wide.jpg" alt="Nature" width="25%" height="25%">
+        <p>Click the button to display the number of images in the document.</p>
+        <button onclick="myFunction()">Try it!</button>
+        <p id="demo"></p>
+
+        <script>
+            function myFunction() {
+                var x = document.images.length;
+                document.getElementById("demo").innerHTML = x;
+            }
+        </script>
+
+    </body>
+</html>
