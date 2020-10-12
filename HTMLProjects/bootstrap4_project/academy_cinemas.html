@@ -125,17 +125,81 @@
         </div>
           
           <!--/Showtimes-->
-<div id="Deals">
-          <div class="text-center">
-            <form>
-                <h1 class="text-primary my-5">Sign up for Movie Club Rewards</h1>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
 
+          <!--Jumbotron heading-->
+       <div class="jumbotron jumbotron-fluid bg-info my-5 text-center">
+         <div class="container">
+           <h1 class="display-4 hidden-on-down" style="color: #fff; font-family: roboto; font-weight: 900; text-transform: uppercase;">Movie Deals</h1>
+           <p class="lead">Check out our monthly deals...</p>
+           <!--Movie deals-->
+           <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#register">See our monthly movie deals!</button>
+          <!--/Movie deals-->
+         </div>
+       </div>
+          <!--/Jumbotron heading-->
+
+          <!--signup form-->
+          <div class="row">
+            <div class="container text-center col-md-6" id="deals">
+              <div class="container text-center">
+                <h1 class="display-5 my-4 col-lg-auto text-primary">Stay current on movies!</h1>
+                <div class="input-group mb-5 input-group-sm">
+                  <input type="text" class="form-control" placeholder="Email">
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-secondary btn-info popoever-dismiss" data-container="body" data-toggle="popover"data-placement="top" data-content="submit email to receive great movie reward deals!">
+                      Sign up!
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <!--/signup form-->
+
+          <!--form modal-->
+          <div class="modal fade" id="register">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Register to receive moveie deals...</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <fieldset class="form-group">
+                      <label for="firstname">First Name:</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="First Name...">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label for="lastname">Last Name:</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="Last Name...">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="Email...">
+                    </fieldset>
+                    <fieldset class="form-group">
+                      <label for="password">Password:</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="Password...">
+                    </fieldset>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!--/Form Modal-->
+
+          <!--Footer-->
           <div class="container my-5">
               <ul class="nav nav-inline">
                   <li class="nav-item">
@@ -154,6 +218,7 @@
               </ul>
 
           </div>
+          <!--/Footer-->
 
         </div>
 
@@ -164,5 +229,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ <script>
+     $('.popover-dismiss').popover({
+        trigger: 'focus'
+      })
+ </script>
+  
+  
   </body>
 </html>
