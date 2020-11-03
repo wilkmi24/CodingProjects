@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+	</head>
+	<body>
+    <h1 style="font-size: 10vw;"></h1>
+    <div id="JSX" ></div>
+
+    <style>
+        body {
+            opacity: 1;
+            transition: 1s opacity: ;;
+        }
+
+        body.fade-out {
+            opacity: 0;
+            transition: none;
+        }
+    </style>
+    <script>document.body.className += ' fade-out';</script>
+    <script type="text/babel">
+        class Greeting extends React.Component {
+            render() {
+                return<h1>Hello, World!</h1>
+            }
+        }
+
+        ReactDOM.render(<Greeting />, document.getElementById('JSX'))
+
+    </script>
+	
+	
+	</body>
+</html>

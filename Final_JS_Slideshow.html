@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="Final_JS_Slideshow.css">
+<script src="./jQuery/jquery-3.5.1.js"></script>
+
+	</head>
+	<body>
+<!--Sticky Element-->
+
+
+<button class="open-button" onclick="openForm()">Open Form</button>
+   
+<div class="form-popup" id="myForm2">
+    <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+    
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    
+    <label for="psw"><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+</form>
+</div>
+<!--Start of slideshow-->        
+	<div id="slideshow">
+        <div>
+            <img src="./Images/kittens.png" alt="kittens">
+        </div>
+    <div>
+        <img src="./Images/cat.png" alt="cat">
+    </div>
+    </div>
+
+    <p style="font-size: large;"> The cat (Felis catus) is a domestic species of small carnivorous mammal.[1][2] <br>
+        It is the only domesticated species in the family Felidae and is often referred <br>
+        to as the domestic cat to distinguish it from the wild members of the family.[4] <br>
+        A cat can either be a house cat, a farm cat or a feral cat; the latter ranges <br>
+        freely and avoids human contact.[5] Domestic cats are valued by humans for<br>
+        companionship and their ability to hunt rodents. About 60 cat breeds are <br>
+        recognized by various cat registries.[6] The cat is similar in anatomy to the <br>
+        other felid species: it has a strong flexible body, quick reflexes, sharp teeth <br>
+        and retractable claws adapted to killing small prey. Its night vision and <br>
+        sense of smell are well developed. Cat communication includes vocalizations <br>
+        like meowing, purring, trilling, hissing, growling and grunting as well as <br>
+        cat-specific body language. A predator that is most active at dawn and dusk,<br>
+        the cat is a solitary hunter but a social species. It can hear sounds <br>
+        too faint or too high in frequency for human ears, such as those made by<br>
+        mice and other small mammals.[7] It secretes and perceives pheromones.[8] <br>
+        Female domestic cats can have kittens from spring to late autumn, with litter <br>
+        sizes often ranging from two to five kittens.[9] Domestic cats are bred and <br>
+        shown at events as registered pedigreed cats, a hobby known as cat fancy.<br>
+        Failure to control breeding of pet cats by spaying and neutering, as well as<br>
+        abandonment of pets, resulted in large numbers of feral cats worldwide, <br>
+        contributing to the extinction of entire bird, mammal, and reptile species, <br>
+        and evoking population control.[10] Cats were first domesticated in the Near East <br>
+        around 7500 BC.[11] It was long thought that cat domestication was initiated <br>
+        in ancient Egypt, as since around 3100 BC veneration was given to cats in ancient Egypt.[12][13] <br>
+        As of 2017, the domestic cat was the second-most popular pet in the United States, <br>
+        with 95 million cats owned.[14][15][16] In the United Kingdom, around 7.3 million <br>
+        cats lived in more than 4.8 million households as of 2019.[17]</p>
+        <hr>
+
+        <footer>
+            <p><a href="https://en.wikipedia.org/wiki/Cat">Link for more information</a></p>
+            
+            </footer>
+    <script>
+    $("#slideshow > div:gt(0)").hide();
+        setInterval(function() {
+            $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+            }, 3000)
+</script>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"] ["phonenumber"].value;
+    if (x =="") {
+        alert("Phone number must be filled in");
+        return false;
+    }
+}
+
+function openForm() {
+    document.getElementById("myForm2").style.display = "block";
+} 
+function closeForm() {
+    document.getElementById("myForm2").style.display = "none";
+}
+</script>
+	</body>
+</html>

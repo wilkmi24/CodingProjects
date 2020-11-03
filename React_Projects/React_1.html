@@ -15,6 +15,7 @@
                 var seconds_Passed = time_Passed / 10 + (time_Passed % 10 ? '' : '.0');
                 var text = 'My React code started running ' +
                     seconds_Passed + ' seconds ago!';
+                    return React.DOM.p(null,text);
             }
         });
         var counter_Factory = React.createFactory(Counter);

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        
+<script src="./JS_Final_Challenges.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./JS_Final_Challenges.css">
+
+	</head>
+	<body>
+        <!--Section1-->
+        <div class="main" id="section1">
+   <!--Phone number form-->
+        <H2>Phone Number</H2>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        <label for="phonenumber">Phonenumber</label><br>
+        <input type="text" id="phonenumber" name="phonenumber" value=""><br>
+        <input type="submit" value="Submit">   
+
+    </form>
+    <!--/Phone number form-->
+
+    <!--the @Keyframes rule-->
+
+    <h3>Hello There!</h3><br>
+<br>
+    <!--/the @Keyframes rule-->
+
+    <!--Zoom in and out-->
+
+<img src="./Images/hydrangea_jumbo-white-600x600_4.jpg" alt="flower">
+
+    <!--/Zoom in and out-->
+</div>
+    <!--/Section1-->
+    <!--Section2-->
+    <div class="main" id="section2"></div>
+    <!--Popup Form-->
+    <h2>Popup Form</h2>
+    <p>Click on the button  at the bottom to fill out the form</p>
+   
+    <button class="open-button" onclick="openForm()">Open Form</button>
+   
+    <div class="form-popup" id="myForm2">
+        <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        
+        <label for="psw"><b>Password</b></label>
+        <input type="text" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    
+    </form>
+    </div>
+    </div>
+    <!--/Popup Form-->
+   
+    <!--/Section2-->
+   
+    <!--JSON practice-->
+   <div id="result"></div>
+    <p id="demo"></p>
+    <p id="test"></p>
+    <script>
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("lastname", "Smith");
+            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        } else{
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+            
+        }
+    </script>
+    <script>
+        var obj = {"name":"John", "age":31, "city":"New Your"
+        };
+        var myJSON = JSON.stringify(obj);
+   document.getElementById("demo").innerHTML = myJSON;
+    </script>
+    <script>
+        var obJ=JSON.parse( '{"firstName":"John","lastName":"Doe"}');
+        document.getElementById("test").innerHTML = obJ.firstName;
+    </script>
+
+    <!--/JSON practice-->
+    <!--Footer with link to my gitHub-->
+<footer>
+    <p><a href="https://github.com/wilkmi24?tab=repositories">Check out my gitHub</a></p>
+</footer>
+
+    <!--/Footer with link to my gitHub-->
+	</body>
+</html>
