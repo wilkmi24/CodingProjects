@@ -1,10 +1,21 @@
 
 class vehicle:
-    body style =
-    engine =
-    fuel =
+    body_style = 'unknown'
+    engine = 'unknown'
 
-    class car:
-        doors =
+class car(vehicle):
+    body_style = 'sudan'
+    engine = 'electric'
+    doors = 4
+    drive = 'awd'
+
+class truck(vehicle):
+    body_style = 'double cab'
+    engine = 'deisel'
+    color = 'blue-gray'
+    tires = 4
+
+    
+        
         
         
