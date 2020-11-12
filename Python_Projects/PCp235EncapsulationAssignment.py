@@ -1,20 +1,17 @@
 
-class vehicle:
-    body_style = 'unknown'
-    engine = 'unknown'
-
-class car(vehicle):
-    body_style = 'sudan'
-    engine = 'electric'
-    doors = 4
-    __drive = 'awd'
-
-class truck(vehicle):
-    body_style = 'double cab'
-    _engine = 'deisel'
-    color = 'blue-gray'
-    tires = 4
-
+class Vehicle:
+    def __init__(self):
+        self._engine = "diesel"
+        self.__owner = "Bob"
     
+class Car(Vehicle):
+    def __init__(self):
+    
+        Vehicle.__init__(self)
+        print("What type of engine is in the car?")
+        print(self._engine)
+        print('Who owns the care?')
+        print(self.__owner)
         
-        
+obj1 = Vehicle()
+print(obj1._engine)
