@@ -10,7 +10,7 @@ print(f.read())
 
 
 import os
-import sys
+
 
 webrowser.open("UpdateWebpage.html")
 
