@@ -42,7 +42,7 @@ class ParentWindow(Frame):
         ln = self.varLName.get()
         self.lblDisplay.config(text='Hello {} {}!'.format(fn,ln))
 
-    def cancel(sedlf):
+    def cancel(self):
         self.master.destroy()
 
 
