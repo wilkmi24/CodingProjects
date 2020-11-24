@@ -13,41 +13,56 @@ class ParentWindow(Frame):
 
         self.master = master
         self.master.resizable(width = False, height = True)
-        self.master.geometry('{}x{}'.format(700, 400))
+        self.master.geometry('{}x{}'.format(600, 300))
         self.master.title('Moving Files')
         self.master.config(bg = 'lightgray')
-        
         self.varSource = StringVar()
         self.varDestination = StringVar()
 
-        self.lblSource = Label(self.master,text='Source Folder: ', font=('Helvetica', 16), fg='black', bg = 'lightgray')
-        self.lblSource.grid(row=0, column=0,padx=(30,0),pady=(30,0))
+        self.btnSource = Button(self.master,text='Browse... ', font=('Helvetica', 16), fg='black', bg = 'lightgray', command=self.BrowseSrc)
+        self.btnSource.grid(row=0, column=0,padx=(30,0),pady=(30,0))
         
-        self.lblDestination = Label(self.master,text='Destination Folder: ', font=('Helvetica', 16), fg='black', bg = 'lightgray')
-        self.lblDestination.grid(row=1, column=0,padx=(30,0),pady=(30,0))
+        self.btnDestination = Button(self.master,text='Browse... ', font=('Helvetica', 16), fg='black', bg = 'lightgray', command=self.BrowseDst)
+        self.btnDestination.grid(row=1, column=0,padx=(30,0),pady=(30,0))
 
         self.lblDisplay = Label(self.master, text='', font=('Helvetica', 16),fg='black', bg = 'lightgray')
         self.lblDisplay.grid(row=3, column=1,padx=(30,0),pady=(30,0))
 
-        self.txtSource = Entry(self.master,text=self.varSource, font=("Helvetica", 16),fg = 'black', bg='lightblue')
+        self.txtSource = Entry(self.master,text=self.varSource, font=("Helvetica", 16),fg = 'black', bg='white', width=30)
         self.txtSource.grid(row=0, column=1,padx=(30,0),pady=(30,0))
 
-        self.txtDestination = Entry(self.master,text=self.varDestination, font=("Helvetica", 16),fg = 'black', bg='lightblue')
+        self.txtDestination = Entry(self.master,text=self.varDestination, font=("Helvetica", 16),fg = 'black', bg='white', width=30)
         self.txtDestination.grid(row=1, column=1,padx=(30,0),pady=(30,0))
 
-        self.btnSearch = Button(self.master, text="Search", width=10, height=2, command=self.search)
-        self.btnSearch.grid(row=2, column=1,padx=(0,0),pady=(30,0), sticky=NE)
+        self.btnCheck = Button(self.master, text="Check for Files", font=('Helvetica', 16), fg='black', bg = 'lightgray', command=self.Check)
+        self.btnCheck.grid(row=2, column=0,padx=(30,0),pady=(30,0))
 
-        self.btnCancel = Button(self.master, text="Cancel", width=10, height=2, command=self.cancel)
-        self.btnCancel.grid(row=2, column=1,padx=(0,90),pady=(30,0), sticky=NE)
+        self.btnClose = Button(self.master, text="Close Program", font=('Helvetica', 16), fg='black', bg = 'lightgray', command=self.CloseProgram)
+        self.btnClose.grid(row=2, column=2,padx=(30,0),pady=(30,0))
 
-    def search(self):
+    def BrowseSrc(self):
         filename = filedialog.askdirectory()
-        print(filename)
-        return filename
-    
+        e = self.txtSource
+        e.delete(0,END)
+        e.insert(0,filename)
+        return
 
-    def cancel(self):
+    def BrowseDst(self):
+        filename = filedialog.askdirectory()
+        e = self.txtDestination
+        e.delete(0,END)
+        e.insert(0,filename)
+        
+    def Check(self):
+        src = '/Users/mindywilkens/Desktop/FolderA/'
+        dst = '/Users/mindywilkens/Desktop/FolderB/'
+        files = os.listdir(src)
+
+        for i in files:
+            shutil.move(src+i,dst)
+     
+
+    def CloseProgram(self):
         self.master.destroy()
 
 
@@ -58,29 +73,3 @@ if __name__ == "__main__":
     App = ParentWindow(root)
     root.mainloop()
    
-
-
-
-
-root = Tk()
-v = StringVar()
-button2 = Button(text="Browse", command=browse_button).grid(row=0, column=3)
-
-mainloop()
-
-SECONDS_IN_DAY = 24 * 60 * 60
-
-src = '/Users/mindywilkens/Desktop/FolderA/'
-dst = '/Users/mindywilkens/Desktop/FolderB/'
-
-now = time.time()
-before = now - SECONDS_IN_DAY
-
-def last_mod_time(fname):
-    return os.path.getmtime(fname)
-
-for fname in os.listdir(src):
-    src_fname = os.path.join(src, fname)
-    if last_mod_time(src_fname) > before:
-        dst_fname = os.path.join(dst, fname)
-        shutil.move(src_fname, dst_fname)

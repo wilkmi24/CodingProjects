@@ -1,44 +1,19 @@
-
-f = open("UpdateWebpage.html", "w")
-f.write("<html>\n\t<body>\n\t\t<h1>\n\t\t\tStay tuned for our amazing summer sale!\n\t\t</h1>\n\t</body>\n\b</html>")
-f.close()
-
-f = open("UpdateWebpage.html", "r")
-print(f.read())
-
-
-import webbrowser
-
-webbrowser.open_new_tab('UpdateWebpage.html')
-webbrowser.open_new('UpdateWebpage.html')    
-
-
-import tkinter
 from tkinter import *
 
+def set_text(text):
+    e.delete(0,END)
+    e.insert(0,text)
+    return
 
-win = Tk('UpdatetoWebpage')
-f = Frame(win)
-l = Label(win, text='Please enter your message here')
-l.pack()
-f.pack()
-v = StringVar()
-e = Entry(win, textvariable = v)
+win = Tk()
+
+e = Entry(win,width=10)
 e.pack()
-b1 = Button(f, text='Submit')
+
+b1 = Button(win,text="animal",command=lambda:set_text("animal"))
 b1.pack()
-v.get()
 
-def submitButton():
-    print(v.get())
+b2 = Button(win,text="plant",command=lambda:set_text("plant"))
+b2.pack()
 
-
-b1.configure(command=submitButton)
-
-def submitButton():
-    f = open("UpdateWebpage.html", "w")
-    f.write("<html>\n\t<body>\n\t\t<h1>\n\t\t\tStay tuned for our amazing summer sale!\n {} \t\t</h1>\n\t</body>\n\b</html>".format(e.get()))
-  
-  f.close()
-
-  self.txtMessage = e.get()
+win.mainloop()
